@@ -14,8 +14,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
-    // It applies the interceptor to all controllers and all methods (routes)
-    registry.addInterceptor(timeElapsedInterceptor);
+    registry.addInterceptor(timeElapsedInterceptor).addPathPatterns("/app/**");
+    // registry.addInterceptor(timeElapsedInterceptor).addPathPatterns("/app/**");
   }
-
 }
